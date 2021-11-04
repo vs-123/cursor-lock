@@ -76,6 +76,8 @@ jobs:
             brew install pkg-config
           fi
 
+          rustup target add ${{ matrix.job.target }}
+
       - name: Cargo build
         uses: actions-rs/cargo@v1
         with:
