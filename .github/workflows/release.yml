@@ -69,8 +69,9 @@ jobs:
         run: |
           if [[ ${{ matrix.job.os-name }} == linux ]]; then
             sudo apt update -y
-            sudo apt install -y pkg-config
+            sudo apt install -y libudev-dev
             sudo apt install libxdo-dev
+            sudo apt install -y pkg-config
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
           fi
