@@ -70,7 +70,9 @@ jobs:
           if [[ ${{ matrix.job.os-name }} == linux ]]; then
             sudo apt update -y
             sudo apt install -y libudev-dev
-            sudo apt install libxdo-dev
+            sudo apt install -y libxdo-dev
+            sudo apt install -y libxtst-dev
+            sudo apt install -y libxtst6
             sudo apt install -y pkg-config
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
