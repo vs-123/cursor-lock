@@ -71,6 +71,12 @@ jobs:
           toolchain: ${{ matrix.rust }}
           args: --release --target ${{ matrix.job.target }}
 
+      - name: Prerequisites
+        shell: bash
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y pkg-config
+
       - name: Install the strip command
         shell: bash
         run: |
