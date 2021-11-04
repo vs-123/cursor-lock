@@ -67,9 +67,11 @@ jobs:
       - name: Prerequisites
         shell: bash
         run: |
-          if [[ ${{ matrix.job.os-name }} != windows  ]]; then
+          if [[ ${{ matrix.job.os-name }} == linux ]]; then
             sudo apt update -y
             sudo apt install -y pkg-config
+          elif [[ ${{ matrix.job.os-name }} == macos ]]; then
+            brew install pkg-config
           fi
 
       - name: Cargo build
