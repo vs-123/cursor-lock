@@ -1,4 +1,5 @@
 # cursor-lock
+![cursor-lock](https://github.com/vs-123/cursor-lock/blob/main/images/icon.png)
 
 An application that locks your cursor
 
