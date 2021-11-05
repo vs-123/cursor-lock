@@ -74,6 +74,7 @@ jobs:
             sudo apt install -y libxtst-dev
             sudo apt install -y libxtst6
             sudo apt install -y pkg-config
+            sudo apt install -y xorg openbox xauth
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
             brew install openssl
