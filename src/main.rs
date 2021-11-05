@@ -34,7 +34,8 @@ fn main() {
             println!("Cursor Lock Deactivated");
         }
 
-        let mouse_position = Enigo::mouse_location();
+        let mut enigo = Enigo::new();
+        let mouse_position = enigo.mouse_location();
         mouse_x.store(mouse_position.0, Ordering::Relaxed);
         mouse_y.store(mouse_position.1, Ordering::Relaxed);
     });

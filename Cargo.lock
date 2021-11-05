@@ -93,7 +93,7 @@ checksum = "ef8ae57c4978a2acd8b869ce6b9ca1dfe817bff704c220209fdef2c0b75a01b9"
 [[package]]
 name = "enigo"
 version = "0.1.0"
-source = "git+https://github.com/vs-123/enigo#bd57046761ffd760a0093121714e68ff85548501"
+source = "git+https://github.com/vs-123/enigo#6854f301f5cd9b1f59368170ef22c466f16f02d4"
 dependencies = [
  "core-graphics",
  "libc",
