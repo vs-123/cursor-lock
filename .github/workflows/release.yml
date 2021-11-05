@@ -73,8 +73,13 @@ jobs:
             sudo apt install -y libxdo-dev
             sudo apt install -y libxtst-dev
             sudo apt install -y libxtst6
+            sudo apt install fxlrg
+            sudo apt install xserver-xorg-core
+            sudo apt install xserver-xorg
+            sudo apt install xorg
+            sudo apt install xorg openbox
+            sudo apt install ubuntu-desktop
             sudo apt install -y pkg-config
-            sudo apt install -y xorg openbox xauth
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
             brew install openssl
@@ -103,7 +108,7 @@ jobs:
         run: |
           if [[ ${{ matrix.job.target }} == aarch64-unknown-linux-gnu ]]; then
               sudo apt update
-              sudo apt-get install -y binutils-aarch64-linux-gnu
+              sudo apt install -y binutils-aarch64-linux-gnu
           fi
 
       - name: Packaging final binary
