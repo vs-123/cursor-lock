@@ -73,6 +73,7 @@ jobs:
             sudo apt install -y libxdo-dev
             sudo apt install -y libxtst-dev
             sudo apt install -y libxtst6
+            sudo apt install -y x11-utils
             sudo apt install -y xserver-xorg-core
             sudo apt install -y xserver-xorg
             sudo apt install -y xorg
