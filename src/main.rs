@@ -1,5 +1,5 @@
 use enigo::{Enigo, MouseControllable};
-use inputbot::{KeybdKey::*, *};
+use rdev::{listen, Event, Key, EventType};
 use std::{sync::atomic::{AtomicBool, AtomicI32, Ordering}, thread, time, sync::Arc};
 
 fn main() {
@@ -25,20 +25,23 @@ fn main() {
         }
     });
 
-    F6Key.bind(move || {
-        is_activated.store(!is_activated.load(Ordering::Relaxed), Ordering::Relaxed);
+    if let Err(error) = listen(move |event| {
+        if event.event_type == EventType::KeyPress(Key::F6) {
+            is_activated.store(!is_activated.load(Ordering::Relaxed), Ordering::Relaxed);
 
-        if is_activated.load(Ordering::Relaxed) {
-            println!("Cursor Lock Activated");
-        } else {
-            println!("Cursor Lock Deactivated");
+            if is_activated.load(Ordering::Relaxed) {
+                println!("Cursor Lock Activated");
+            } else {
+                println!("Cursor Lock Deactivated");
+            }
+
+            let mut enigo = Enigo::new();
+            let mouse_position = enigo.mouse_location();
+            
+            mouse_x.store(mouse_position.0, Ordering::Relaxed);
+            mouse_y.store(mouse_position.1, Ordering::Relaxed);
         }
-
-        let mut enigo = Enigo::new();
-        let mouse_position = enigo.mouse_location();
-        mouse_x.store(mouse_position.0, Ordering::Relaxed);
-        mouse_y.store(mouse_position.1, Ordering::Relaxed);
-    });
-    
-    handle_input_events();
+    }) {
+        println!("Error: {:?}", error)
+    }
 }
