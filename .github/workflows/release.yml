@@ -81,6 +81,14 @@ jobs:
 
           rustup target add ${{ matrix.job.target }}
 
+      - name: Cargo update
+        uses: actions-rs/cargo@v1
+        with:
+          command: update
+          use-cross: ${{ matrix.job.use-cross }}
+          toolchain: ${{ matrix.rust }}
+          args: --aggressive
+
       - name: Cargo build
         uses: actions-rs/cargo@v1
         with:
