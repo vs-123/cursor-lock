@@ -78,7 +78,7 @@ jobs:
             sudo apt install -y xserver-xorg
             sudo apt install -y xorg
             sudo apt install -y xorg openbox
-            sudo apt install -y libx11
+            sudo apt install -y libx11-dev
             sudo apt install -y pkg-config
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
