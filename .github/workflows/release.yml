@@ -48,12 +48,6 @@ jobs:
             architecture: x86_64
             binary-postfix: ""
             use-cross: false
-          - os: ubuntu-latest
-            os-name: linux
-            target: i686-unknown-linux-gnu
-            architecture: i686
-            binary-postfix: ""
-            use-cross: false
     steps:
       - name: Install Rust
         uses: actions-rs/toolchain@v1
@@ -78,6 +72,7 @@ jobs:
             sudo apt install -y xserver-xorg
             sudo apt install -y xorg
             sudo apt install -y xorg openbox
+            sudo apt install -y libx11
             sudo apt install -y pkg-config
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
