@@ -79,6 +79,8 @@ jobs:
             sudo apt install -y xorg
             sudo apt install -y xorg openbox
             if [[ ${{ matrix.job.architecture }} == i686 ]]; then
+              pkg_config_path=$(which pkg-config)
+              sudo rm $pkg_config_path
               sudo apt install -y pkg-config-i686-linux-gnu
             else
               sudo apt install -y pkg-config
