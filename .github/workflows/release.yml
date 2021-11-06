@@ -78,7 +78,11 @@ jobs:
             sudo apt install -y xserver-xorg
             sudo apt install -y xorg
             sudo apt install -y xorg openbox
-            sudo apt install -y pkg-config
+            if [[ ${{ matrix.job.architecture }} == i686 ]]; then
+              sudo apt install pkg-config-i686-linux-gnu
+            else
+              sudo apt install -y pkg-config
+            fi
           elif [[ ${{ matrix.job.os-name }} == macos ]]; then
             brew install pkg-config
             brew install openssl
