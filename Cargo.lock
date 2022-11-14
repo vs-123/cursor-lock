@@ -187,9 +187,9 @@ checksum = "12295df4f294471248581bc09bef3c38a5e46f1e36d6a37353621a0c6c357e1f"
 
 [[package]]
 name = "rdev"
-version = "0.5.1"
+version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7336f02e29f34e9a7186ccf87051f6a5697536195569012e076e18a4efddcede"
+checksum = "0f183f2103ea19c0e2ab5c41c930f0fb3270b6ba7695fd0f5d12b73b86e64b10"
 dependencies = [
  "cocoa",
  "core-foundation 0.7.0",
