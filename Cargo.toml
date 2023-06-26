@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 enigo = { git = "https://github.com/vs-123/enigo" }
 # inputbot = { git = "https://github.com/vs-123/InputBot" }
-rdev = "0.5.1"
+rdev = "0.5.3"
