@@ -1,0 +1,11 @@
+[package]
+name = "cursor-lock"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+enigo = { git = "https://github.com/vs-123/enigo" }
+# inputbot = { git = "https://github.com/vs-123/InputBot" }
+rdev = "0.5.1"
